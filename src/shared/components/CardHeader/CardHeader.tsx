@@ -1,14 +1,18 @@
 import React from 'react';
+import classNames from 'classnames';
+
+import { Vector } from '@/shared/assets/images';
 
 import styles from './CardHeader.module.scss';
 
 interface Props {
   time: string;
+  isHovered: boolean;
   category?: string;
 }
 
 export const CardHeader = (props: Props) => {
-  const { time, category } = props;
+  const { time, category, isHovered } = props;
 
   const dateTime = new Date(time);
 
@@ -22,7 +26,9 @@ export const CardHeader = (props: Props) => {
     <div className={styles.header}>
       <div className={styles.time}>{formattedTime}</div>
       {category && <div className={styles.category}>{category}</div>}
-      <div className={styles.vector} />
+      <Vector
+        className={classNames(styles.vector, { [styles.visible]: isHovered })}
+      />
     </div>
   );
 };
