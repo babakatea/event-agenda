@@ -2,21 +2,20 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
-import { RootState } from '@/app/store';
+import { RootState, useAppDispatch } from '@/app/store';
+import { filterPosts } from '@/entities/posts';
+import { Tabs } from '@/entities/posts/types/types';
 
 import styles from './Header.module.scss';
 
-enum Tabs {
-  day1 = 'Day 1',
-  day2 = 'Day 2',
-}
-
 export const Header = () => {
+  const dispatch = useAppDispatch();
   const [activeTab, setActiveTab] = useState<Tabs>(Tabs.day1);
   const { headingData } = useSelector((state: RootState) => state.posts);
 
   const handleTabClick = (tab: Tabs) => {
     setActiveTab(tab);
+    dispatch(filterPosts(tab));
   };
 
   return (

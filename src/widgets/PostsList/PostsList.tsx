@@ -8,14 +8,13 @@ import { SmallPost } from '@/features/SmallPost';
 import styles from './PostsList.module.scss';
 
 export const PostsList = () => {
-  const { postsList } = useSelector((state: RootState) => state.posts);
+  const { filteredPostsList: posts } = useSelector(
+    (state: RootState) => state.posts,
+  );
 
-  console.log('postsList', postsList);
-
-  // TODO: match types of posts by speakerList
   return (
     <div className={styles.container}>
-      {postsList.map((post: InnerBlock, index: number) => (
+      {posts.map((post: InnerBlock, index: number) => (
         <SmallPost key={index} {...post} />
       ))}
     </div>
