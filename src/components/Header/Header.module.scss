@@ -50,17 +50,37 @@
       border-radius: 200px;
       background: rgba(178, 178, 178, 0.16);
       display: inline-flex;
+      cursor: pointer;
+      position: relative;
 
       /* Blur menu */
       box-shadow: -71.472px 71.472px 71.472px 0px rgba(255, 255, 255, 0.10) inset, 71.472px -71.472px 71.472px 0px rgba(165, 165, 165, 0.10) inset;
       backdrop-filter: blur(28px);
 
-      .switchLeft, .switchRight {
-        display: flex;
+      .background {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 35px;
+        height: 16px;
         padding: 12px 24px;
+        background-color: #000;
+        transition: left 0.3s ease;
+        border-radius: 46px;
+      }
+
+      .moveToRight {
+        left: calc(100% - 92px);
+      }
+
+      .switchLeft, .switchRight {
+        position: relative;
+        z-index: 1;
+        display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 46px;
+        padding: 12px 24px;
         width: 35px;
         height: 16px;
         font-family: o9 Sans, sans-serif;
@@ -73,11 +93,13 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-      }
+        transition: background-color 0.5s ease, color 0.5s ease;
+        background-color: transparent;
+        color: #000;
 
-      .switchLeft {
-        background: #000;
-        color: #FFF;
+        &.activeTab {
+          color: #FFF;
+        }
       }
     }
 
