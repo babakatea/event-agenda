@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  width: 100%;
+  min-width: 100%;
+  padding: 112px 0 112px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 112px;
+
+  .header {
+    display: flex;
+    align-items: flex-end;
+    width: 90%;
+    justify-content: space-between;
+
+    .titleContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+
+      .description {
+        color: var(--Monochrome-Black, #000);
+        font-family: o9 Sans, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.16px;
+        text-transform: uppercase;
+      }
+
+      .title {
+        color: #010101;
+        font-family: o9 Sans Variable, sans-serif;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 264;
+        line-height: 90%;
+        letter-spacing: -3.2px;
+        text-transform: uppercase;
+      }
+    }
+
+    .SwitchContainer {
+      width: 168px;
+      height: 40px;
+      padding: 8px;
+      flex-shrink: 0;
+      border-radius: 200px;
+      background: rgba(178, 178, 178, 0.16);
+      display: inline-flex;
+
+      /* Blur menu */
+      box-shadow: -71.472px 71.472px 71.472px 0px rgba(255, 255, 255, 0.10) inset, 71.472px -71.472px 71.472px 0px rgba(165, 165, 165, 0.10) inset;
+      backdrop-filter: blur(28px);
+
+      .switchLeft, .switchRight {
+        display: flex;
+        padding: 12px 24px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 46px;
+        width: 35px;
+        height: 16px;
+        font-family: o9 Sans, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .switchLeft {
+        background: #000;
+        color: #FFF;
+      }
+    }
+
+    .timezone {
+      width: 219px;
+      color: #010101;
+      text-align: right;
+      font-family: o9 Sans, sans-serif;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 135%;
+    }
+  }
+}
