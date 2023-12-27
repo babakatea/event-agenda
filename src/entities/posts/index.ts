@@ -15,7 +15,11 @@ const postsSlice = createSlice({
     loadPosts(state, action: { payload: PostsList }) {
       state.postsList = action.payload.blocks[0].innerBlocks;
       state.headingData = action.payload.blocks[0].attrs;
-      state.filteredPostsList = state.postsList;
+
+      // initially filter posts by day 1
+      state.filteredPostsList = state.postsList.filter(
+        post => post.attrs.day === Tabs.day1,
+      );
     },
     filterPosts(state, action: { payload: Tabs }) {
       state.filteredPostsList = state.postsList.filter(

@@ -7,12 +7,13 @@ import { useFetchPostsQuery } from '@/shared/api/agenda';
 import { PostsList } from '@/widgets/PostsList';
 
 import styles from './Agenda.module.scss';
+import { POST_ID } from '@/entities/posts/consts/constants';
 
 export const Agenda = () => {
   const dispatch = useAppDispatch();
 
   const { data, isLoading, isFetching, isError, isSuccess } =
-    useFetchPostsQuery({ post_id: 41298 });
+    useFetchPostsQuery({ post_id: POST_ID });
 
   useEffect(() => {
     if (isSuccess) {

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { RootState } from '@/app/store';
 import { InnerBlock } from '@/entities/posts/types/types';
-import { SmallPost } from '@/features/SmallPost';
+import { Post } from '@/features/Post';
 
 import styles from './PostsList.module.scss';
 
@@ -15,7 +15,7 @@ export const PostsList = () => {
   return (
     <div className={styles.container}>
       {posts.map((post: InnerBlock, index: number) => (
-        <SmallPost key={index} {...post} />
+        <Post key={index} {...post} />
       ))}
     </div>
   );

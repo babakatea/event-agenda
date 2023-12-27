@@ -1,0 +1,46 @@
+.speakersContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: auto;
+
+  .speaker {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+
+    img {
+      width: 120px;
+      height: 140px;
+      flex-shrink: 0;
+    }
+
+    .logo {
+      width: 70px;
+      height: 54px;
+    }
+
+    .name {
+      color: #000;
+      font-family: o9 Sans Variable, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      letter-spacing: -0.24px;
+      text-transform: uppercase;
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
+
+    .position {
+      color: var(--Monochrome-Black, #000);
+      font-family: o9 Sans, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.24px;
+    }
+  }
+}

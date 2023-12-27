@@ -52,7 +52,7 @@ export interface InnerBlock {
   innerBlocks: ParagraphBlock[];
 }
 
-interface Speaker {
+export interface Speaker {
   id: number;
   company_logo: { mediaId: number; mediaUrl: string }[];
   image: {
@@ -65,7 +65,7 @@ interface Speaker {
   position: string;
 }
 
-interface ParagraphBlock {
+export interface ParagraphBlock {
   blockName: BlockName.paragraph;
   innerContent: string[];
   innerHTML: string;
