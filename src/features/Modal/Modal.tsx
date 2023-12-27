@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import parse from 'html-react-parser';
 
@@ -31,16 +31,35 @@ export const Modal = (props: Props) => {
     speakerList,
   } = props;
 
+  const modalRef = React.useRef<HTMLDivElement>(null);
+
   const onModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isModalOpen, closeModal]);
+
   return (
-    <div
-      className={classNames(styles.modal, { [styles.open]: isModalOpen })}
-      onClick={closeModal}
-    >
-      <div className={styles.modalContent} onClick={onModalClick}>
+    <div className={classNames(styles.modal, { [styles.open]: isModalOpen })}>
+      <div
+        className={styles.modalContent}
+        onClick={onModalClick}
+        ref={modalRef}
+      >
         <div className={styles.header}>
           <div className={styles.headerContent}>
             <div className={styles.duration}>

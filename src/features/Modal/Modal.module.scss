@@ -1,3 +1,20 @@
+@keyframes fadeInBackground {
+  to {
+    background-color: rgba(35, 35, 35, 0.4);
+  }
+}
+
+@keyframes appearCenter {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -5,19 +22,25 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(35, 35, 35, 0.4);
+  background-color: rgba(35, 35, 35, 0);
   z-index: 2;
   align-items: center;
   justify-content: center;
 
   &.open {
     display: flex;
+    cursor: auto;
+
+    animation: fadeInBackground 0.2s ease-in-out forwards;
 
     .modalContent {
+      animation: appearCenter 0.2s ease-in-out 0.2s forwards;
+      transform: scale(0.5);
+      opacity: 0;
+
       max-height: calc(100% - 137px);
       margin-top: 68px;
       margin-bottom: 69px;
-
       width: 744px;
       background-color: #E5E5E5;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -74,6 +97,12 @@
             text-transform: uppercase;
             cursor: pointer;
             border-bottom: 1px solid #010101;
+            margin-bottom: 1px;
+
+            &:hover {
+              border-bottom: 2px solid #010101;
+              margin-bottom: 0;
+            }
           }
 
           .timezone {
@@ -145,7 +174,12 @@
           gap: 12px;
           white-space: nowrap;
           cursor: pointer;
-          margin-bottom: 56px;
+          margin-bottom: 57px;
+
+          &:hover {
+            border-bottom: 2px solid #010101;
+            margin-bottom: 56px;
+          }
 
           svg {
             width: 20px;
