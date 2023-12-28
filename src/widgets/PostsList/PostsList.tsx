@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import uuid4 from 'uuid4';
 
 import { RootState } from '@/app/store';
 import { InnerBlock } from '@/entities/posts/types/types';
@@ -14,8 +15,8 @@ export const PostsList = () => {
 
   return (
     <div className={styles.container}>
-      {posts.map((post: InnerBlock, index: number) => (
-        <Post key={index} {...post} />
+      {posts.map((post: InnerBlock) => (
+        <Post key={uuid4()} {...post} />
       ))}
     </div>
   );
