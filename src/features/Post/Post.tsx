@@ -75,26 +75,28 @@ export const Post = (props: InnerBlock) => {
   };
 
   return (
-    <div
-      className={classNames(styles.container, {
-        [styles.hovered]: coverImage && isHovered,
-        [styles.twoSpeakersContainer]: !coverImage && speakerList.length === 2,
-        [styles.maxSpeakersContainer]: !coverImage && speakerList.length > 2,
-      })}
-      onClick={openModal}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      style={coverImage && !isHovered ? coverImageStyles : {}}
-    >
-      <CardHeader
-        category={coverImage ? '' : category}
-        isCoverImage={!!coverImage}
-        isHovered={isHovered}
-        time={time}
-      />
+    <>
+      <div
+        className={classNames(styles.container, {
+          [styles.hovered]: coverImage && isHovered,
+          [styles.twoSpeakersContainer]:
+            !coverImage && speakerList.length === 2,
+          [styles.maxSpeakersContainer]: !coverImage && speakerList.length > 2,
+        })}
+        onClick={openModal}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={coverImage && !isHovered ? coverImageStyles : {}}
+      >
+        <CardHeader
+          category={coverImage ? '' : category}
+          isCoverImage={!!coverImage}
+          isHovered={isHovered}
+          time={time}
+        />
 
-      {renderPostContent()}
-
+        {renderPostContent()}
+      </div>
       <Modal
         closeModal={closeModal}
         description={innerBlocks}
@@ -105,6 +107,6 @@ export const Post = (props: InnerBlock) => {
         time={time}
         title={title}
       />
-    </div>
+    </>
   );
 };
