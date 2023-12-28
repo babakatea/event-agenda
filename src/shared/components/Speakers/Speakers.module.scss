@@ -1,8 +1,11 @@
+@import 'src/shared/assets/colors/colors';
+
 .speakersContainer {
   display: flex;
   flex-direction: row;
   gap: 12px;
   margin-top: auto;
+  font-family: 'o9 Sans Regular';
 
   .speaker {
     display: flex;
@@ -21,11 +24,8 @@
     }
 
     .name {
-      color: #000;
-      font-family: o9 Sans Variable, sans-serif;
+      color: $B10;
       font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
       line-height: 110%;
       letter-spacing: -0.24px;
       text-transform: uppercase;
@@ -34,11 +34,8 @@
     }
 
     .position {
-      color: var(--Monochrome-Black, #000);
-      font-family: o9 Sans, sans-serif;
+      color: $B10;
       font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
       line-height: 120%;
       letter-spacing: -0.24px;
     }

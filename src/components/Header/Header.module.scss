@@ -1,3 +1,5 @@
+@import 'src/shared/assets/colors/colors';
+
 .container {
   display: flex;
   width: 100%;
@@ -6,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   gap: 112px;
+  font-family: 'o9 Sans Regular';
 
   .header {
     display: flex;
@@ -20,25 +23,21 @@
       gap: 24px;
 
       .description {
-        color: var(--Monochrome-Black, #000);
-        font-family: o9 Sans, sans-serif;
+        color: $B10;
         font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
         line-height: 110%;
         letter-spacing: -0.16px;
         text-transform: uppercase;
       }
 
       .title {
-        color: #010101;
-        font-family: o9 Sans Variable, sans-serif;
+        color: $B11;
         font-size: 80px;
-        font-style: normal;
         font-weight: 264;
         line-height: 90%;
         letter-spacing: -3.2px;
         text-transform: uppercase;
+        font-family: 'o9 Sans Light';
       }
     }
 
@@ -46,15 +45,13 @@
       width: 168px;
       height: 40px;
       padding: 8px;
-      flex-shrink: 0;
       border-radius: 200px;
-      background: rgba(178, 178, 178, 0.16);
+      background: $G08;
       display: inline-flex;
       cursor: pointer;
       position: relative;
 
-      /* Blur menu */
-      box-shadow: -71.472px 71.472px 71.472px 0px rgba(255, 255, 255, 0.10) inset, 71.472px -71.472px 71.472px 0px rgba(165, 165, 165, 0.10) inset;
+      box-shadow: -71.472px 71.472px 71.472px 0px $G07 inset, 71.472px -71.472px 71.472px 0px $G09 inset;
       backdrop-filter: blur(28px);
 
       .background {
@@ -64,7 +61,7 @@
         width: 35px;
         height: 16px;
         padding: 12px 24px;
-        background-color: #000;
+        background-color: $B10;
         transition: left 0.3s ease;
         border-radius: 46px;
       }
@@ -83,10 +80,7 @@
         padding: 12px 24px;
         width: 35px;
         height: 16px;
-        font-family: o9 Sans, sans-serif;
         font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
         line-height: 110%;
         letter-spacing: -0.2px;
         text-transform: uppercase;
@@ -95,7 +89,7 @@
         text-overflow: ellipsis;
         transition: background-color 0.5s ease, color 0.5s ease;
         background-color: transparent;
-        color: #000;
+        color: $B10;
 
         &.activeTab {
           color: #FFF;
@@ -105,12 +99,9 @@
 
     .timezone {
       width: 219px;
-      color: #010101;
+      color: $B11;
       text-align: right;
-      font-family: o9 Sans, sans-serif;
       font-size: 17px;
-      font-style: normal;
-      font-weight: 400;
       line-height: 135%;
     }
   }
