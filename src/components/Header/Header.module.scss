@@ -1,8 +1,20 @@
 @import 'src/shared/assets/colors/colors';
 
+@media screen and (max-width: 1279px) {
+  .container {
+    background-color: $W11;
+    opacity: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
 /* Shared styles for switch */
 @media screen and (max-width: 1919px) {
-  .container .header .SwitchContainer {
+  .container .header .switchContainer {
     width: 168px;
     height: 40px;
 
@@ -102,6 +114,10 @@
       flex-direction: row;
       align-items: flex-end;
 
+      .switchContainer {
+        position: relative;
+      }
+
       .titleContainer {
         gap: 24px;
 
@@ -141,7 +157,8 @@
         }
       }
 
-      .SwitchContainer {
+      .switchContainer {
+        position: relative;
         width: 183px;
         height: 48px;
 
@@ -183,13 +200,13 @@
       flex-direction: column;
       align-items: flex-start;
 
-      .description {
+      .intro {
         color: $B10;
         line-height: 110%;
         text-transform: uppercase;
       }
 
-      .title {
+      .heading {
         color: $B11;
         font-weight: 264;
         line-height: 90%;
@@ -198,13 +215,12 @@
       }
     }
 
-    .SwitchContainer {
+    .switchContainer {
       padding: 8px;
       border-radius: 200px;
       background: $G08;
       display: inline-flex;
       cursor: pointer;
-      position: relative;
 
       box-shadow: -71.472px 71.472px 71.472px 0px $G07 inset, 71.472px -71.472px 71.472px 0px $G09 inset;
       backdrop-filter: blur(28px);
@@ -228,7 +244,6 @@
         line-height: 110%;
         letter-spacing: -0.2px;
         text-transform: uppercase;
-        overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         transition: background-color 0.5s ease, color 0.5s ease;

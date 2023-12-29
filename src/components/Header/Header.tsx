@@ -23,10 +23,10 @@ export const Header = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.titleContainer}>
-          <div className={styles.description}>{headingData.intro}</div>
-          <div className={styles.title}>{headingData.heading}</div>
+          <div className={styles.intro}>{headingData.intro}</div>
+          <div className={styles.heading}>{headingData.heading}</div>
         </div>
-        <div className={styles.SwitchContainer}>
+        <div className={styles.switchContainer}>
           <div
             className={classNames(styles.background, {
               [styles.switcher]: activeTab === Tabs.day2,
