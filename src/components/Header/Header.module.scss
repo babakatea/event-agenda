@@ -1,39 +1,8 @@
 @import 'src/shared/assets/colors/colors';
 
 @media screen and (max-width: 1279px) {
-  .container {
-    background-color: $W11;
-    opacity: 1;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-  }
-}
-
-/* Shared styles for switch */
-@media screen and (max-width: 1919px) {
-  .container .header .switchContainer {
-    width: 168px;
-    height: 40px;
-
-    .background {
-      width: 35px;
-      height: 16px;
-      padding: 12px 24px;
-      top: 8px;
-      left: 8px;
-    }
-
-    .switcher {
-      left: calc(100% - 92px);
-    }
-
-    .switchLeft, .switchRight {
-      width: 37px;
-      padding: 12px 24px;
-    }
+  .switchContainer {
+    display: none;
   }
 }
 
@@ -41,7 +10,7 @@
 @media screen and (max-width: 599px) {
   @media screen and (max-width: 389px) {
     .container {
-      padding: 144px 0 120px 0;
+      padding: 144px 0 32px 0;
     }
   }
 
@@ -55,15 +24,17 @@
     .header {
       flex-direction: column;
       gap: 32px;
+      width: 100%;
 
       .titleContainer {
+        padding: 0 16px;
         gap: 24px;
 
-        .description {
+        .intro {
           font-size: 17px;
           letter-spacing: -0.136px;
         }
-        .title {
+        .heading {
           font-size: 56px;
           letter-spacing: -2.24px;
         }
@@ -84,15 +55,17 @@
     .header {
       flex-direction: column;
       gap: 56px;
+      width: 100%;
 
       .titleContainer {
+        padding: 0 56px;
         gap: 32px;
 
-        .description {
+        .intro {
           font-size: 20px;
           letter-spacing: -0.16px;
         }
-        .title {
+        .heading {
           font-size: 80px;
           letter-spacing: -3.2px;
         }
@@ -113,19 +86,16 @@
     .header {
       flex-direction: row;
       align-items: flex-end;
-
-      .switchContainer {
-        position: relative;
-      }
+      width: 90%;
 
       .titleContainer {
         gap: 24px;
 
-        .description {
+        .intro {
           font-size: 20px;
           letter-spacing: -0.16px;
         }
-        .title {
+        .heading {
           font-size: 80px;
           letter-spacing: -3.2px;
         }
@@ -142,39 +112,19 @@
     .header {
       flex-direction: row;
       align-items: flex-end;
+      width: 90%;
 
       .titleContainer {
         gap: 32px;
 
-        .description {
+        .intro {
           font-size: 20px;
           letter-spacing: -0.16px;
         }
-        .title {
+        .heading {
           font-size: 104px;
           line-height: 90%;
           letter-spacing: -5.72px;
-        }
-      }
-
-      .switchContainer {
-        position: relative;
-        width: 183px;
-        height: 48px;
-
-        .background {
-          width: 45px;
-          height: 12px;
-          padding: 18px 24px;
-        }
-
-        .switcher {
-          left: calc(100% - 100px);
-        }
-
-        .switchLeft, .switchRight {
-          width: 42px;
-          padding: 16px 24px;
         }
       }
     }
@@ -192,7 +142,6 @@
 
   .header {
     display: flex;
-    width: 90%;
     justify-content: space-between;
 
     .titleContainer {
@@ -212,47 +161,6 @@
         line-height: 90%;
         text-transform: uppercase;
         font-family: 'o9 Sans Light';
-      }
-    }
-
-    .switchContainer {
-      padding: 8px;
-      border-radius: 200px;
-      background: $G08;
-      display: inline-flex;
-      cursor: pointer;
-
-      box-shadow: -71.472px 71.472px 71.472px 0px $G07 inset, 71.472px -71.472px 71.472px 0px $G09 inset;
-      backdrop-filter: blur(28px);
-
-      .background {
-        position: absolute;
-        background-color: $B10;
-        transition: left 0.3s ease;
-        border-radius: 46px;
-      }
-
-      .switchLeft, .switchRight {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 46px;
-        height: 16px;
-        font-size: 14px;
-        line-height: 110%;
-        letter-spacing: -0.2px;
-        text-transform: uppercase;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        transition: background-color 0.5s ease, color 0.5s ease;
-        background-color: transparent;
-        color: $B10;
-
-        &.activeTab {
-          color: #FFF;
-        }
       }
     }
 

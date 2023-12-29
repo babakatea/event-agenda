@@ -1,0 +1,110 @@
+@import 'src/shared/assets/colors/colors';
+
+@media screen and (max-width: 1279px) {
+  .container {
+    background-color: $W11;
+    opacity: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+/* Shared styles for switch */
+@media screen and (max-width: 1919px) {
+  .container {
+    width: 168px;
+    height: 40px;
+
+    .background {
+      width: 35px;
+      height: 16px;
+      padding: 12px 24px;
+      top: 8px;
+      left: 8px;
+    }
+
+    .switcher {
+      left: calc(100% - 92px);
+    }
+
+    .switchLeft, .switchRight {
+      width: 37px;
+      padding: 12px 24px;
+    }
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .container {
+    position: relative;
+  }
+}
+
+/* Large Desktop styles */
+@media screen and (min-width: 1920px) {
+  .container {
+    position: relative;
+    width: 183px;
+    height: 48px;
+
+    .background {
+      width: 45px;
+      height: 12px;
+      padding: 18px 24px;
+    }
+
+    .switcher {
+      left: calc(100% - 100px);
+    }
+
+    .switchLeft, .switchRight {
+      width: 42px;
+      padding: 16px 24px;
+    }
+  }
+}
+
+.container {
+  padding: 8px;
+  border-radius: 200px;
+  background: $G08;
+  display: inline-flex;
+  cursor: pointer;
+
+  box-shadow: -71.472px 71.472px 71.472px 0px $G07 inset, 71.472px -71.472px 71.472px 0px $G09 inset;
+  backdrop-filter: blur(28px);
+
+  .background {
+    position: absolute;
+    background-color: $B10;
+    transition: left 0.3s ease;
+    border-radius: 46px;
+  }
+
+  .switchLeft, .switchRight {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 46px;
+    height: 16px;
+    font-size: 14px;
+    line-height: 110%;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: transparent;
+    color: $B10;
+
+    &.activeTab {
+      color: #FFF;
+    }
+  }
+}
