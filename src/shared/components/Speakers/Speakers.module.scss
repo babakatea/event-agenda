@@ -1,26 +1,78 @@
 @import 'src/shared/assets/colors/colors';
 
+/* Mobile styles */
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .speakersContainer {
+    overflow-x: scroll;
+    width: 108px;
+
+    .speaker {
+      img {
+        width: 108px;
+        height: 120px;
+      }
+
+      .logo {
+        height: 30px;
+      }
+    }
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .speakersContainer {
+    overflow-x: scroll;
+    flex-wrap: wrap;
+    width: 124px;
+
+    .speaker {
+      img {
+        width: 124px;
+        height: 140px;
+      }
+
+      .logo {
+        height: 50px;
+      }
+    }
+  }
+}
+
+/* Desktops styles */
+@media screen and (min-width: 1280px) {
+  .speakersContainer {
+    margin-top: auto;
+    width: 124px;
+
+    .speaker {
+      img {
+        width: 124px;
+        height: 140px;
+      }
+
+      .logo {
+        height: 50px;
+      }
+    }
+  }
+}
+
 .speakersContainer {
   display: flex;
-  flex-direction: row;
   gap: 12px;
-  margin-top: auto;
   font-family: 'o9 Sans Regular';
 
   .speaker {
     display: flex;
     flex-direction: column;
-    width: 120px;
 
     img {
-      width: 120px;
-      height: 140px;
       flex-shrink: 0;
     }
 
     .logo {
-      width: 70px;
-      height: 54px;
+      width: max-content;
     }
 
     .name {

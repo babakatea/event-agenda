@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { Vector } from '@/shared/assets/images';
 
-import styles from './CardHeader.module.scss';
+import styles from './PostHeader.module.scss';
 
 interface Props {
   time: string;
@@ -12,7 +12,7 @@ interface Props {
   isCoverImage?: boolean;
 }
 
-export const CardHeader = (props: Props) => {
+export const PostHeader = (props: Props) => {
   const { time, category, isHovered, isCoverImage } = props;
 
   return (

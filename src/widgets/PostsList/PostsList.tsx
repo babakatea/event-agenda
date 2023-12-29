@@ -5,6 +5,7 @@ import uuid4 from 'uuid4';
 import { RootState } from '@/app/store';
 import { InnerBlock } from '@/entities/posts/types/types';
 import { Post } from '@/features/Post';
+import { Dropdown } from '@/shared/assets/images';
 
 import styles from './PostsList.module.scss';
 
@@ -18,6 +19,10 @@ export const PostsList = () => {
       {posts.map((post: InnerBlock) => (
         <Post key={uuid4()} {...post} />
       ))}
+
+      <div className={styles.seeAll}>
+        see all <Dropdown />
+      </div>
     </div>
   );
 };

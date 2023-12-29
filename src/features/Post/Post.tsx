@@ -3,7 +3,8 @@ import classNames from 'classnames';
 
 import { InnerBlock } from '@/entities/posts/types/types';
 import { Modal } from '@/features/Modal';
-import { CardHeader } from '@/shared/components/CardHeader';
+import { Arrow } from '@/shared/assets/images';
+import { PostHeader } from '@/shared/components/PostHeader';
 import { Speakers } from '@/shared/components/Speakers';
 import { formatTime } from '@/shared/utils/formatTime';
 
@@ -39,7 +40,7 @@ export const Post = (props: InnerBlock) => {
   const coverImageStyles = {
     backgroundImage: `url(${coverImage?.url})`,
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundPosition: 'center top',
     backgroundRepeat: 'no-repeat',
   };
 
@@ -48,6 +49,9 @@ export const Post = (props: InnerBlock) => {
       return (
         <>
           <div className={styles.description}>{title}</div>
+          <div className={styles.learnMore} onClick={openModal}>
+            learn more <Arrow />
+          </div>
           <Speakers speakerList={speakerList} />
         </>
       );
@@ -55,12 +59,13 @@ export const Post = (props: InnerBlock) => {
 
     return (
       <div className={styles.coverImageData}>
+        <div className={styles.speakerName}>{speakerList[0].name}</div>
         <div
-          className={classNames(styles.speakerName, {
+          className={classNames(styles.description, {
             [styles.hovered]: isHovered,
           })}
         >
-          {speakerList[0].name}
+          {title}
         </div>
         <div className={styles.footer}>
           <div className={styles.position}>{speakerList[0].position}</div>
@@ -88,7 +93,7 @@ export const Post = (props: InnerBlock) => {
         onMouseLeave={onMouseLeave}
         style={coverImage && !isHovered ? coverImageStyles : {}}
       >
-        <CardHeader
+        <PostHeader
           category={coverImage ? '' : category}
           isCoverImage={!!coverImage}
           isHovered={isHovered}

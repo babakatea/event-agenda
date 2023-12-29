@@ -1,5 +1,215 @@
 @import 'src/shared/assets/colors/colors';
 
+/* Mobile styles */
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .container {
+    padding: 16px;
+    min-height: 397px;
+    max-height: 484px;
+    min-width: 256px;
+    max-width: 567px;
+    width: inherit;
+
+    .description {
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    .learnMore {
+      display: flex;
+      font-size: 12px;
+
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .coverImageData {
+      gap: 24px;
+
+      .speakerName {
+        font-size: 48px;
+        line-height: 100%;
+        letter-spacing: -0.72px;
+      }
+
+      .description {
+        color: $N10;
+        font-size: 20px;
+        line-height: 110%;
+      }
+
+      .footer {
+        .position {
+          font-size: 17px;
+          line-height: 135%;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .container {
+    padding: 24px 24px 20px 24px;
+    min-width: 440px;
+    max-width: 523px;
+    height: 480px;
+    width: min-content;
+
+    &.maxSpeakersContainer div:last-child {
+      flex-direction: column;
+    }
+
+    .description {
+      font-size: 24px;
+      line-height: 110%;
+      letter-spacing: -0.14px;
+    }
+
+    .learnMore {
+      display: flex;
+      font-size: 14px;
+
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
+
+    @media screen and (max-width: 743px) {
+      .description {
+        font-size: 28px;
+      }
+    }
+
+    .coverImageData {
+      gap: 32px;
+
+      .speakerName {
+        width: 440px;
+        font-size: 64px;
+        line-height: 100%;
+        letter-spacing: -1.28px;
+      }
+
+      .description {
+        color: $N10;
+        font-size: 24px;
+        line-height: 110%;
+      }
+
+      .footer {
+        .position {
+          font-size: 17px;
+          line-height: 135%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container .learnMore {
+    display: none;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .container {
+    padding: 24px 24px 20px 24px;
+    width: 352px;
+    height: 421px;
+
+    &.maxSpeakersContainer {
+      width: 776px;
+      height: 420px;
+    }
+
+    .description {
+      font-size: 24px;
+      line-height: 110%;
+      letter-spacing: -0.12px;
+    }
+
+    .coverImageData {
+      gap: 32px;
+
+      .speakerName {
+        font-size: 56px;
+        line-height: 95%;
+        letter-spacing: -1.96px;
+      }
+
+      .description {
+        display: none;
+
+        &.hovered {
+          display: block;
+          color: $B10;
+        }
+      }
+
+      .footer {
+        .position {
+          font-size: 14px;
+          line-height: 110%;
+          letter-spacing: -0.28px;
+        }
+      }
+    }
+  }
+}
+
+/* Large Desktop styles */
+@media screen and (min-width: 1920px) {
+  .container {
+    padding: 24px 24px 20px 24px;
+    width: 366px;
+    height: 444px;
+
+    &.maxSpeakersContainer {
+      width: 804px;
+      height: 444px;
+    }
+
+    .description {
+      font-size: 28px;
+      line-height: 110%;
+      letter-spacing: -0.42px;
+    }
+
+    .coverImageData {
+      gap: 32px;
+
+      .speakerName {
+        font-size: 64px;
+        line-height: 100%;
+        letter-spacing: -1.28px;
+      }
+
+      .description {
+        display: none;
+
+        &.hovered {
+          display: block;
+          color: $B10;
+        }
+      }
+
+      .footer {
+        .position {
+          font-size: 17px;
+          line-height: 135%;
+        }
+      }
+    }
+  }
+}
+
 @keyframes slideUp {
   from {
     transform: translateY(100%);
@@ -10,9 +220,6 @@
 }
 
 .container {
-  width: 352px;
-  height: 421px;
-  padding: 24px 24px 20px 24px;
   background-color: $W12;
   display: flex;
   flex-direction: column;
@@ -23,8 +230,6 @@
   animation: slideUp 0.5s ease forwards;
 
   &.maxSpeakersContainer {
-    width: 776px;
-    height: 420px;
     background: $W13;
   }
 
@@ -38,9 +243,17 @@
 
   .description {
     color: $B10;
-    font-size: 24px;
-    line-height: 110%;
-    letter-spacing: -0.12px;
+  }
+
+  .learnMore {
+    width: fit-content;
+    padding-bottom: 6px;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row;
+    border-bottom: 1px solid $B10;
+    text-transform: uppercase;
+    cursor: pointer;
   }
 
   .coverImageData {
@@ -49,25 +262,24 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-top: auto;
-    gap: 32px;
 
     .speakerName {
       color: $N10;
-      font-size: 56px;
-      line-height: 95%;
-      letter-spacing: -1.96px;
       text-transform: capitalize;
+    }
 
+    .description {
       &.hovered {
+        padding-left: 14px;
         color: $B10;
       }
     }
 
     .footer {
+      height: 54px;
       display: flex;
       align-items: flex-start;
       background-color: $N10;
-      height: 54px;
       justify-content: space-between;
       width: 100%;
       padding-inline: 14px 0;
@@ -79,8 +291,6 @@
         justify-content: center;
         flex: 1 0 0;
         color: $B10;
-        font-size: 14px;
-        line-height: 110%;
         letter-spacing: -0.28px;
       }
 

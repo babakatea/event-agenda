@@ -1,5 +1,24 @@
 @import 'src/shared/assets/colors/colors';
 
+/* Mobile styles */
+@media screen and (min-width: 320px) and (max-width: 599px) {
+}
+
+/* Tablet styles */
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+
+}
+
+/* Large Desktop styles */
+@media screen and (min-width: 1920px) {
+
+}
+
 @keyframes fadeInBackground {
   to {
     background-color: $G12;

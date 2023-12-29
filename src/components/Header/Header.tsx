@@ -18,6 +18,7 @@ export const Header = () => {
     dispatch(filterPosts(tab));
   };
 
+  // TODO: for mobile version the description is only keynotes
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -28,7 +29,7 @@ export const Header = () => {
         <div className={styles.SwitchContainer}>
           <div
             className={classNames(styles.background, {
-              [styles.moveToRight]: activeTab === Tabs.day2,
+              [styles.switcher]: activeTab === Tabs.day2,
             })}
           />
           <div
