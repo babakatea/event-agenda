@@ -62,8 +62,9 @@ export const Modal = (props: Props) => {
       >
         <div className={styles.header}>
           <div className={styles.headerContent}>
-            <div className={styles.duration}>
-              {time} | {duration} MIN
+            <div className={styles.time}>
+              {time}
+              <div className={styles.duration}>| {duration} MIN</div>
             </div>
             <div className={styles.closeButton} onClick={closeModal}>
               close <Cross />

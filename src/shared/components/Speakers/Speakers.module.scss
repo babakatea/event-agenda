@@ -1,10 +1,9 @@
 @import 'src/shared/assets/colors/colors';
 
 /* Mobile styles */
-@media screen and (min-width: 320px) and (max-width: 599px) {
+@media screen and (max-width: 599px) {
   .speakersContainer {
     overflow-x: scroll;
-    width: 108px;
 
     .speaker {
       img {
@@ -15,6 +14,10 @@
       .logo {
         height: 30px;
       }
+
+      .position {
+        width: 108px;
+      }
     }
   }
 }
@@ -24,7 +27,6 @@
   .speakersContainer {
     overflow-x: scroll;
     flex-wrap: wrap;
-    width: 124px;
 
     .speaker {
       img {
@@ -34,6 +36,10 @@
 
       .logo {
         height: 50px;
+      }
+
+      .position {
+        width: 124px;
       }
     }
   }
@@ -43,7 +49,6 @@
 @media screen and (min-width: 1280px) {
   .speakersContainer {
     margin-top: auto;
-    width: 124px;
 
     .speaker {
       img {
@@ -54,6 +59,10 @@
       .logo {
         height: 50px;
       }
+
+      .position {
+        width: 124px;
+      }
     }
   }
 }
@@ -62,6 +71,7 @@
   display: flex;
   gap: 12px;
   font-family: 'o9 Sans Regular';
+  width: auto;
 
   .speaker {
     display: flex;

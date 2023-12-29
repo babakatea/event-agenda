@@ -1,7 +1,7 @@
 @import 'src/shared/assets/colors/colors';
 
 /* Shared styles for switch */
-@media screen and (min-width: 320px) and (max-width: 1919px) {
+@media screen and (max-width: 1919px) {
   .container .header .SwitchContainer {
     width: 168px;
     height: 40px;
@@ -26,7 +26,7 @@
 }
 
 /* Mobile styles */
-@media screen and (min-width: 320px) and (max-width: 599px) {
+@media screen and (max-width: 599px) {
   @media screen and (max-width: 389px) {
     .container {
       padding: 144px 0 120px 0;
