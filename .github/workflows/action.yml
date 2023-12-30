@@ -28,9 +28,9 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: build
+          name: github-pages
           path: ./build
 
   deploy:
