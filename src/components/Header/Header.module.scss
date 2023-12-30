@@ -1,4 +1,5 @@
 @import 'src/shared/assets/colors/colors';
+@import 'src/widgets/PostsList/PostsList.module.scss';
 
 @media screen and (max-width: 1279px) {
   .switchContainer {
@@ -86,7 +87,9 @@
     .header {
       flex-direction: row;
       align-items: flex-end;
-      width: 90%;
+      margin: auto;
+      max-width: 1248px;
+      width: 100%;
 
       .titleContainer {
         gap: 24px;
@@ -112,7 +115,9 @@
     .header {
       flex-direction: row;
       align-items: flex-end;
-      width: 90%;
+      margin: auto;
+      width: 100%;
+      max-width: 1748px;
 
       .titleContainer {
         gap: 32px;

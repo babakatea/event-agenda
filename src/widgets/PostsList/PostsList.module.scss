@@ -68,12 +68,10 @@
 
   .seeAll {
     width: fit-content;
-    padding-bottom: 8px;
     align-items: center;
     justify-content: center;
     gap: 8px;
     flex-direction: row;
-    //border-bottom: 1px solid $B10;
     text-transform: uppercase;
     cursor: pointer;
   }
