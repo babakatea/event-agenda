@@ -51,7 +51,7 @@ export const Modal = (props: Props) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isModalOpen, closeModal]);
+  }, [isModalOpen, closeModal, handleClickOutside]);
 
   return (
     <div className={classNames(styles.modal, { [styles.open]: isModalOpen })}>
