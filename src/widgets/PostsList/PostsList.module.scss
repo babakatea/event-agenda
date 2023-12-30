@@ -1,9 +1,78 @@
+@import 'src/shared/assets/colors/colors';
+
+/* Mobile styles */
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .container {
+    padding: 0 16px;
+
+    .seeAll {
+      display: flex;
+      font-size: 14px;
+
+      svg {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .container {
+    padding: 0 56px;
+    flex-wrap: wrap;
+
+    .seeAll {
+      display: flex;
+      flex: 0 0 100%;
+      font-size: 16px;
+
+      svg {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container .seeAll {
+    display: none;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .container {
+    margin: auto;
+    max-width: 1248px;
+  }
+}
+
+/* Large Desktop styles */
+@media screen and (min-width: 1920px) {
+  .container {
+    margin: auto;
+    max-width: 1748px;
+  }
+}
+
 .container {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: auto;
   gap: 24px;
-  justify-content: center;
+  padding-bottom: 200px;
+
+  .seeAll {
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: row;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
 }

@@ -1,23 +1,28 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import uuid4 from 'uuid4';
 
 import { RootState } from '@/app/store';
 import { InnerBlock } from '@/entities/posts/types/types';
-import { SmallPost } from '@/features/SmallPost';
+import { Post } from '@/features/Post';
+import { Dropdown } from '@/shared/assets/images';
 
 import styles from './PostsList.module.scss';
 
 export const PostsList = () => {
-  const { postsList } = useSelector((state: RootState) => state.posts);
+  const { filteredPostsList: posts } = useSelector(
+    (state: RootState) => state.posts,
+  );
 
-  console.log('postsList', postsList);
-
-  // TODO: match types of posts by speakerList
   return (
     <div className={styles.container}>
-      {postsList.map((post: InnerBlock, index: number) => (
-        <SmallPost key={index} {...post} />
+      {posts.map((post: InnerBlock) => (
+        <Post key={uuid4()} {...post} />
       ))}
+
+      <div className={styles.seeAll}>
+        see all <Dropdown />
+      </div>
     </div>
   );
 };

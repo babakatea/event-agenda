@@ -1,0 +1,105 @@
+@import 'src/shared/assets/colors/colors';
+
+/* Mobile styles */
+@media screen and (max-width: 599px) {
+  .speakersContainer {
+    overflow-x: scroll;
+
+    .speaker {
+      img {
+        width: 108px;
+        height: 120px;
+      }
+
+      .logo {
+        height: 30px;
+      }
+
+      .position {
+        width: 108px;
+      }
+    }
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .speakersContainer {
+    overflow-x: scroll;
+    flex-wrap: wrap;
+
+    .speaker {
+      img {
+        width: 124px;
+        height: 140px;
+      }
+
+      .logo {
+        height: 50px;
+      }
+
+      .position {
+        width: 124px;
+      }
+    }
+  }
+}
+
+/* Desktops styles */
+@media screen and (min-width: 1280px) {
+  .speakersContainer {
+    margin-top: auto;
+
+    .speaker {
+      img {
+        width: 124px;
+        height: 140px;
+      }
+
+      .logo {
+        height: 50px;
+      }
+
+      .position {
+        width: 124px;
+      }
+    }
+  }
+}
+
+.speakersContainer {
+  display: flex;
+  gap: 12px;
+  font-family: 'o9 Sans Regular';
+  width: auto;
+
+  .speaker {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      flex-shrink: 0;
+    }
+
+    .logo {
+      width: max-content;
+    }
+
+    .name {
+      color: $B10;
+      font-size: 12px;
+      line-height: 110%;
+      letter-spacing: -0.24px;
+      text-transform: uppercase;
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
+
+    .position {
+      color: $B10;
+      font-size: 12px;
+      line-height: 120%;
+      letter-spacing: -0.24px;
+    }
+  }
+}

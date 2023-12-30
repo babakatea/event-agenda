@@ -1,6 +1,7 @@
 export interface PostsState {
   postsList: InnerBlock[];
   headingData: HeadingData;
+  filteredPostsList: InnerBlock[];
 }
 
 export interface PostsList {
@@ -27,12 +28,16 @@ interface Block {
 }
 
 type Category = 'KEYNOTE';
-type Day = 'day 1' | 'day 2';
+
+export enum Tabs {
+  day1 = 'Day 1',
+  day2 = 'Day 2',
+}
 
 export interface InnerBlock {
   attrs: {
     category: Category;
-    day: Day;
+    day: Tabs;
     duration: number;
     speakerList: Speaker[];
     startTime: string;
@@ -47,7 +52,7 @@ export interface InnerBlock {
   innerBlocks: ParagraphBlock[];
 }
 
-interface Speaker {
+export interface Speaker {
   id: number;
   company_logo: { mediaId: number; mediaUrl: string }[];
   image: {
@@ -60,7 +65,7 @@ interface Speaker {
   position: string;
 }
 
-interface ParagraphBlock {
+export interface ParagraphBlock {
   blockName: BlockName.paragraph;
   innerContent: string[];
   innerHTML: string;

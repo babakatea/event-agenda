@@ -1,5 +1,39 @@
 @font-face {
-    font-family: 'o9 Sans';
+    font-family: 'o9 Sans Regular';
+    src:
+            local('o9 Sans Regular Web'),
+            local('o9Sans-Regular-Web'),
+            url('o9Sans-Regular-Web.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'o9 Sans Bold';
+    src:
+            local('o9 Sans Bold Web'),
+            local('o9Sans-Bold-Web'),
+            url('o9Sans-Bold-Web.woff2') format('woff2');
     font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'o9 Sans Light';
+    src:
+            local('o9 Sans Light Web'),
+            local('o9Sans-Light-Web'),
+            url('o9Sans-Light-Web.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'o9 Sans Variable';
+    src:
+            local('o9 Sans Variable'),
+            local('o9SansVariable'),
+            url('o9SansVariable.ttf') format('ttf');
+    font-weight: 400;
     font-style: normal;
 }

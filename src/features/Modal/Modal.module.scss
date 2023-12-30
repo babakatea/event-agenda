@@ -1,0 +1,247 @@
+@import 'src/shared/assets/colors/colors';
+
+/* Mobile styles */
+@media screen and (max-width: 599px) {
+  .duration {
+    display: none;
+  }
+
+  .closeButton, .calendar {
+    font-size: 14px;
+  }
+
+  .timezone {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .modalContent {
+    width: auto;
+  }
+
+  .body div {
+    flex-wrap: wrap;
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 600px) and (max-width: 1279px) {
+  .closeButton, .calendar {
+    font-size: 16px;
+  }
+
+  .timezone {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .modalContent {
+    width: auto;
+  }
+
+  .body div {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .closeButton {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .calendar {
+    font-size: 16px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .modalContent {
+    width: 648px;
+  }
+}
+
+/* Large Desktop styles */
+@media screen and (min-width: 1920px) {
+  .modalContent {
+    width: 740px;
+  }
+}
+
+@keyframes fadeInBackground {
+  to {
+    background-color: $G12;
+  }
+}
+
+@keyframes appearCenter {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $G10;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+
+  &.open {
+    display: flex;
+    cursor: auto;
+
+    animation: fadeInBackground 0.2s ease-in-out forwards;
+
+    .modalContent {
+      animation: appearCenter 0.2s ease-in-out 0.2s forwards;
+      transform: scale(0.5);
+      opacity: 0;
+
+      max-height: calc(100% - 137px);
+      margin-top: 68px;
+      margin-bottom: 69px;
+      background-color: $W11;
+      box-shadow: 0 4px 8px $G11;
+      display: flex;
+      padding: 48px 48px 64px 48px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 56px;
+      overflow-y: auto;
+      font-family: 'o9 Sans Regular';
+
+      .header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .headerContent {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          .time {
+            width: auto;
+            height: 9px;
+            display: flex;
+            padding: 10px 14px;
+            justify-content: center;
+            align-items: center;
+            gap: 2.33px;
+            border-radius: 32px;
+            border: 1.059px solid $B11;
+            background: $B11;
+            color: $W10;
+            font-size: 12px;
+            line-height: 120%;
+            letter-spacing: -0.12px;
+            text-transform: uppercase;
+            cursor: auto;
+          }
+
+          .closeButton {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: $B11;
+            line-height: 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-bottom: 1px solid $B11;
+            margin-bottom: 1px;
+
+            &:hover {
+              border-bottom: 2px solid $B11;
+              margin-bottom: 0;
+            }
+          }
+
+          .timezone {
+            color: $B11;
+            font-size: 12px;
+            line-height: 135%;
+          }
+        }
+      }
+
+      .body {
+        color: $B10;
+
+        .heading {
+          font-size: 17px;
+          line-height: 110%;
+          letter-spacing: -0.136px;
+          text-transform: uppercase;
+          margin-bottom: 24px;
+        }
+
+        .title {
+          line-height: 110%;
+          letter-spacing: -0.2px;
+          margin-bottom: 40px;
+        }
+
+        .description {
+          font-size: 17px;
+          line-height: 135%;
+          margin-bottom: 40px;
+
+          br {
+            content: "";
+            display: block;
+            margin-top: 20px;
+          }
+        }
+
+        .calendar {
+          padding-bottom: 8px;
+          display: inline-flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          border-bottom: 1px solid $B11;
+          color: $B11;
+          line-height: 20px;
+          text-transform: uppercase;
+          gap: 12px;
+          white-space: nowrap;
+          cursor: pointer;
+          margin-bottom: 57px;
+
+          &:hover {
+            border-bottom: 2px solid $B11;
+            margin-bottom: 56px;
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+}

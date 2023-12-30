@@ -1,3 +1,33 @@
+@media screen and (max-width: 599px) {
+  .switchContainer {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  @media screen and (min-width: 600px) {
+    .switchContainer {
+      margin-left: 56px;
+    }
+  }
+
+  .switchContainer {
+    margin-bottom: 72px;
+    position: sticky;
+    z-index: 1;
+    top: 60px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .switchContainer {
+    display: none;
+  }
+}
+
 .container {
   background: #E5E5E5;
+  overflow-y: scroll;
+  height: 100vh;
+  overflow-x: hidden;
 }
