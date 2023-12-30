@@ -54,6 +54,7 @@
 @media screen and (min-width: 1920px) {
   .container {
     margin: auto;
+    max-width: 1748px;
   }
 }
 
@@ -63,7 +64,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 24px;
-  justify-content: center;
   padding-bottom: 200px;
 
   .seeAll {

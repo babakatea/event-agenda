@@ -14,7 +14,6 @@ export const PostsList = () => {
     (state: RootState) => state.posts,
   );
 
-  // TODO: arrange items to the left side
   return (
     <div className={styles.container}>
       {posts.map((post: InnerBlock) => (
