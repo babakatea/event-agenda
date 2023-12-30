@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started
 
 The project structure was based on [Feature-Sliced Design](https://feature-sliced.design/) pattern.
 
