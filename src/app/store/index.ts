@@ -4,6 +4,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import PostsReducer from '@/entities/posts';
 import { rootApi } from '@/shared/api/rootApi';
 
+// PostsReducer handles the state for posts,
+// and rootApi.reducer is added for handling API states and actions.
 const rootReducer = combineReducers({
   posts: PostsReducer,
   [rootApi.reducerPath]: rootApi.reducer,

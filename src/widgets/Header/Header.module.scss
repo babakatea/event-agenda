@@ -1,5 +1,5 @@
-@import 'src/shared/assets/colors/colors';
-@import 'src/widgets/PostsList/PostsList.module.scss';
+@import '../../shared/assets/colors/colors';
+@import '../PostsList/PostsList.module';
 
 @media screen and (max-width: 1279px) {
   .switchContainer {

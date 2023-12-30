@@ -16,7 +16,6 @@ export const Header = (props: Props) => {
   const { headingData } = useSelector((state: RootState) => state.posts);
   const { activeTab, handleTabClick } = props;
 
-  // TODO: for mobile version the description is only keynotes
   return (
     <div className={styles.container}>
       <div className={styles.header}>

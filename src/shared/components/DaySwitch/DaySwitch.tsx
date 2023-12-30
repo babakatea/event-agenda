@@ -11,6 +11,16 @@ interface Props {
   className?: string;
 }
 
+/**
+ * DaySwitch Component
+ *
+ * This component is currently designed to switch between two predefined days, 'day1' and 'day2'.
+ * It's set up to handle these specific tabs statically.
+ *
+ * NOTE: Ideally, this component should be designed to dynamically generate switchers based on the
+ * number of days received from an API. The current implementation with hardcoded days is a
+ * temporary solution and might need refactoring for scalability and flexibility.
+ */
 export const DaySwitch = (props: Props) => {
   const { activeTab, handleTabClick, className } = props;
 
