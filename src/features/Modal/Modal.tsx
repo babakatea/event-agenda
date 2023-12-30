@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import classNames from 'classnames';
 import parse from 'html-react-parser';
 
@@ -37,11 +37,17 @@ export const Modal = (props: Props) => {
     e.stopPropagation();
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-      closeModal();
-    }
-  };
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        closeModal();
+      }
+    },
+    [closeModal],
+  );
 
   useEffect(() => {
     if (isModalOpen) {
